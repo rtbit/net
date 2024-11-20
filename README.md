@@ -1,1 +1,3 @@
-Test 1201
+#rtbit.net#
+
+##NOSTR Check og testing##
