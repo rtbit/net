@@ -1,0 +1,19 @@
+{
+  "names": {
+    "rtbit": "6c999653b606d246697398555d19397bdaa2a96a1419f1822648e96fc9a0af81",
+    "newuser": "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    "anotheruser": "123456abcdef123456abcdef123456abcdef123456abcdef123456abcdef1234"
+  },
+  "relays": {
+    "6c999653b606d246697398555d19397bdaa2a96a1419f1822648e96fc9a0af81": [
+      "wss://relay1.example.com",
+      "wss://relay2.example.com"
+    ],
+    "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890": [
+      "wss://relay3.example.com"
+    ],
+    "123456abcdef123456abcdef123456abcdef123456abcdef123456abcdef1234": [
+      "wss://relay4.example.com"
+    ]
+  }
+}
