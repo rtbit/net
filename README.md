@@ -1,3 +1,3 @@
-#rtbit.net#
+# rtbit.net
 
-##NOSTR Check og testing##
+*## NOSTR Check og testing*
