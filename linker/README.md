@@ -1,1 +1,1 @@
-Test 1
+#Linker##rtbit###NOSTR: [https://rtbit.net/](https://rtbit.net/) ###X: [https://x.com/Hodlon_rtbit/](https://x.com/Hodlon_rtbit/)##[Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf)###[Bitcoin Whitepaper, NORSK](https://bitcoin.org/files/bitcoin-paper/bitcoin_no.pdf)
