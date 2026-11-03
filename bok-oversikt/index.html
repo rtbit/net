@@ -36,6 +36,8 @@ a:hover{text-decoration:underline}
 .controls input::placeholder{color:var(--muted)}
 select{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 10px;font-size:14px}
 .chiprow{display:flex;flex-wrap:wrap;gap:8px}
+.controls.collapsed .chiprow,.controls.collapsed select,.controls.collapsed .toggle,.controls.collapsed #tBoker{display:none}
+.controls.collapsed #tFilter{color:var(--orange);border-color:var(--orange)}
 .chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
   padding:5px 12px;font-size:13px;cursor:pointer;user-select:none;transition:color .15s,border-color .15s,background .15s}
 .chip:hover{color:var(--ink);border-color:var(--gold)}
@@ -98,8 +100,9 @@ footer b{color:var(--ink)}
   <p class="masthead-meta"><span class="sigil">₿</span>Datastyrt — generert 2026-11-04. Omslag: klikk for å bla hvis boken har flere.</p>
 </header>
 
-<div class="controls" role="toolbar" aria-label="Filtrer bøker">
+<div class="controls collapsed" role="toolbar" aria-label="Filtrer bøker">
   <input type="search" id="q" placeholder="Søk i tittel, forfatter, sammendrag …" aria-label="Søk">
+  <button type="button" class="chip" id="tFilter" aria-expanded="false" title="Vis/skjul sorter og filtre">Sorter/filter ▼</button>
   <select id="sort" aria-label="Sorter">
     <option value="rekkje">Leserekkefølge (nybegynner først)</option>
     <option value="ar">Nyeste først</option>
@@ -780,6 +783,22 @@ $('nullstill').addEventListener('click', function(){
   document.querySelectorAll('#cats .chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
   render();
 });
+
+// --- vis/skjul sorter/filter ---
+var ctl = document.querySelector('.controls'), tF = $('tFilter');
+if (ctl && tF) {
+  var filerApen = false;
+  function setFiler(o){
+    filerApen = !!o;
+    ctl.classList.toggle('collapsed', !filerApen);
+    tF.textContent = 'Sorter/filter ' + (filerApen ? '▲' : '▼');
+    tF.setAttribute('aria-expanded', filerApen ? 'true' : 'false');
+  }
+  tF.addEventListener('click', function(){ setFiler(!filerApen); });
+  q.addEventListener('focus', function(){ if (!filerApen) setFiler(true); });
+  q.addEventListener('click', function(){ if (!filerApen) setFiler(true); });
+  setFiler(false);
+}
 
 </script>
 </body>
